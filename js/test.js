@@ -1,10 +1,9 @@
-
-console.log(hjk0);
+//====ДО
+console.log( "Welcome!");
 
 function checkPassword(password) {
   const ADMIN_PASSWORD = "jqueryismyjam";
-  // Change code below this line
-
+ 
   let message;
 
   if (password === ADMIN_PASSWORD) {
@@ -13,8 +12,20 @@ function checkPassword(password) {
     message = "Access denied, wrong password!";
   }
 
-  return message;
-  // Change code above this line
+  return message;  
+}
+
+console.log(checkPassword("mangohackzor"));
+//====ПОСЛЕ
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";   
+
+  if (password === ADMIN_PASSWORD) {
+    return "Welcome!";
+  }   
+  return "Access denied, wrong password!";
+ 
 }
 
 console.log(checkPassword("mangohackzor"));
