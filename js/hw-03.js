@@ -437,20 +437,20 @@
 // price, image и tags со значениями из переменных с аналогичными именами.
 //  Обязательно используй синтаксис коротких свойств.
 
-const name = 'Repair Droid';
-const price = 2500;
-const image = 'https://via.placeholder.com/640x480';
-const tags = ['on sale', 'trending', 'best buy'];
+// const name = 'Repair Droid';
+// const price = 2500;
+// const image = 'https://via.placeholder.com/640x480';
+// const tags = ['on sale', 'trending', 'best buy'];
 
-const product = {
+// const product = {
    
-  price,
-  image, 
-  tags,
-  name
+//   price,
+//   image, 
+//   tags,
+//   name
 
-  };
+//   };
 
-console.log(product.price);//Repair Droid
+// console.log(product.price);//Repair Droid
 
 // =====================   9  ===========================
