@@ -212,7 +212,7 @@
 // В результате вызова new Car({ brand: 'BMW', model: 'X5', price: 58900 }) получится объект { brand: 'BMW', model: 'X5', price: 58900 }.
 // В результате вызова new Car({ brand: 'Nissan', model: 'Murano', price: 31700 }) получится объект { brand: 'Nissan', model: 'Murano', price: 31700 }.
 
-// =========== hw-04 ==========
+// =========== hw-05 ==========
 // Свойство prototype
 // Мы уже знаем что такое прототип объекта,
 //     свойство __proto__ и как происходит поиск отсутствующих
@@ -313,17 +313,25 @@
 // вызовы методов в той последовательности, в которой твой код
 // будут проверять тесты.Пожалуйста ничего там не меняй.
 
-const Storage = function ([items]) {
-	this.item = items;
-}
-
-// Пиши код выше этой строки
-const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
-console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
-storage.addItem('Дроид');
-console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
-storage.removeItem('Пролонгер');
-console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+// function Storage(items) {
+//                this.items = items;
+// }; 
+//   Storage.prototype.getItems = function() {
+//                return this.items;
+// };
+// Storage.prototype.addItem = function(newItem) {
+//                return this.items.push(newItem);
+// };
+// Storage.prototype.removeItem = function(item) {
+//  return this.items.splice(this.items.indexOf(item),1);
+// };
+// // Пиши код выше этой строки
+// const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+// storage.addItem('Дроид');
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+// storage.removeItem('Пролонгер');
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
 
 
 // =========== hw-07 ==========
