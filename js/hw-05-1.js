@@ -1312,4 +1312,4 @@
 // У класса Admin есть публичный метод isBlacklisted.
 // После вызова mango.blacklist('poly@mail.com') значение свойства blacklistedEmails это массив [ 'poly@mail.com' ].
 // Вызов mango.isBlacklisted('mango@mail.com') возвращает false.
-// Вызов mango.isBlacklisted('poly@mail.com') возвращает true.
+// Вызов mango.isBlacklisted('poly@mail.com') возвращает true
