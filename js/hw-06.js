@@ -1335,96 +1335,373 @@
 // ============== hw -06--21 ============
 // Задача. Список друзей
 // Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
-const  users =
-[
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-    age: 37
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-    age: 34
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-    age: 24
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-    age: 21
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-    age: 27
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-    age: 38
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-    age: 39
-  }
-]
-// Задание
-// Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей 
-// всех пользователей (свойство friends). У нескольких пользователей могут быть 
-// одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
+// const  users =
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// // Задание
+// // Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей 
+// // всех пользователей (свойство friends). У нескольких пользователей могут быть 
+// // одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
 
-const getFriends = (users) => { 
+// const getFriends = (users) => { 
 
-const unicUserFriends = users.flatMap(user => user.friends)
-.filter((nameFrend, index) => userFriends.indexOf(nameFrend) === index );
-return userFriends;
+// const userFriends = users.flatMap(user => user.friends);
+// const unicUserFriends =  userFriends.filter((nameFrend, index) => userFriends.indexOf(nameFrend) === index );
+// return unicUserFriends;
 
-};
+// };
 
-console.log(getFriends(users,[]));
+
+// Тесты
+// Объявлена переменная getFriends.
+// Переменной getFriends присвоена стрелочная функция с параметром (users).
+// Вызов функции с указанным массивом пользователей возвращает массив ['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson', 'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman'].
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
 
 
 // ============== hw -06--22 ============
 
+// Задача. Список друзей
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// Задание
+// Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей
+//  (свойство friends). У нескольких пользователей могут быть одинаковые друзья, сделай так
+//   чтобы возвращаемый массив не содержал повторений.
+
+// const getActiveUsers = (users) => {
+//   const activeUsers = users.filter(user => user.isActive);
+//   return activeUsers;
+// };
+
+// Тесты
+// Объявлена переменная getActiveUsers. Переменной getActiveUsers присвоена стрелочная
+//  функция с параметром users.
+// Для перебора параметра users используется метод filter().
+// Вызов функции с указанным массивом пользователей возвращает массив объектов пользователей с 
+// именами Sharlene Bush, Elma Head, Carey Barr и Sheree Anthony.
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+
 
 // ============== hw -06--23 ============
+
+// Задача. Неактивные пользователи
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// Задание
+// Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных
+//  пользователей, значение свойства isActive которых false.
+
+// const getInactiveUsers = (users) => {
+  
+//   const activeUsers = users.filter(user => user.isActive === false);
+//   return activeUsers;
+// };
+
+// Тесты
+// -Объявлена переменная getInactiveUsers.
+
+// Переменной getInactiveUsers присвоена стрелочная функция с параметром users.
+// Для перебора параметра users используется метод filter().
+// Вызов функции с указанным массивом пользователей возвращает массив объектов пользователей с 
+// именами Moore Hensley, Ross Vazquez и Blackburn Dotson.
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+
+// ============== hw -06--24 ============
+// Метод find()
+// Если метод filter(callack) используется для поиска всех элементов удовлетворяющим условию, 
+// то метод find(callback) 
+// позволяет найти и вернуть первый подходящий элемент, после чего перебор массива прекращается. 
+// То есть он ищет до первого совпадения.
+
+// массив.find((element, index, array) => {
+//   // Тело коллбек-функции
+// });
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает первый элемент удовлетворяющий условию, то есть когда коллбек возвращает true.
+// Если ни один элемент не подошёл, то есть для всех элементов коллбек вернул false, метод возвращает 
+// undefined.
+// Метод find() используется для одной задачи - поиска элемента по уникальному значению свойства.
+//  Например, поиск пользователя по почте, автомобиля по серийному номеру, книги по названию и т. п.
+
+// const colorPickerOptions = [
+//   { label: 'red', color: '#F44336' },
+//   { label: 'green', color: '#4CAF50' },
+//   { label: 'blue', color: '#2196F3' },
+//   { label: 'pink', color: '#E91E63' },
+//   { label: 'indigo', color: '#3F51B5' },
+// ];
+
+// colorPickerOptions.find((option) => option.label === 'blue'); // { label: 'blue', color: '#2196F3' }
+// colorPickerOptions.find((option) => option.label === 'pink'); // { label: 'pink', color: '#E91E63' }
+// colorPickerOptions.find((option) => option.label === 'white'); // undefined
+
+
+// Задание
+// Используя метод find() дополни код так, чтобы:
+
+// В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает 
+// со значением переменной BOOK_TITLE.
+// В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со 
+// значением переменной AUTHOR.
+
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'Сон смешного человека';
+// const AUTHOR = 'Роберт Шекли';
+// // Пиши код ниже этой строки
+
+// const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book => book.author
+//  === AUTHOR);
+
+
+// Тесты
+// Объявлена переменная books.
+// Значение переменной books это массив.
+// Объявлена переменная BOOK_TITLE.
+// Значение переменной BOOK_TITLE это строка 'Сон смешного человека'.
+// Объявлена переменная AUTHOR.
+// Значение переменной AUTHOR это строка 'Роберт Шекли'.
+// Объявлена переменная bookWithTitle.
+// Значение переменной bookWithTitle это объект книги с названием выше 'Сон смешного человека'.
+// Объявлена переменная bookByAuthor.
+// Значение переменной bookByAuthor это объект книги автора 'Роберт Шекли'.
+// Для перебора массива books использован метод find().
+
+// ============== hw -06--25 ============
+
+
+// ============== hw -06--26 ============
+
+
+// ============== hw -06--27 ============
+
+
+
+// ============== hw -06--28 ============
+
+
+
+// ============== hw -06--29 ============
+
+// ============== hw -06--24 ============
