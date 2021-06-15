@@ -2593,27 +2593,215 @@
 //  возрастанию рейтинга.
 // В переменной sortedByDescentingRating получился массив книг отсортированный по
 //  убыванию рейтинга.
-const books = [
-  { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
-  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
-  { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
-  { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
-  { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
-];
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//     { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//     { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+//   ];
+//   // Пиши код ниже этой строки
+  
+//   const sortedByAuthorName = [...books].sort(function (a, b) {
+    
+//     return a.author.localeCompare(b.author);
+//   });
+  
+//   const sortedByReversedAuthorName = [...books].sort(function (a, b) {
+    
+//     return b.author.localeCompare(a.author);
+//   });
+  
+//   const sortedByAscendingRating = [...books].sort((a,b) => a.rating - b.rating );
+  
+//   const sortedByDescentingRating = [...books].sort((a,b) => b.rating - a.rating )
 
-// Пиши код ниже этой строки
-
-const sortedByAuthorName = books.sort((firstBook,secondBook) => firstBook.author.localeCompare(secondBook.author));
-
-const sortedByReversedAuthorName = books.sort((firstBook,secondBook) => secondBook.author.localeCompare(firstBook.author));
-
-
-//const sortedByAscendingRating = books.sort((firstBook,secondBook) //=> firstBook.rating - secondBook.rating);
-
-//const sortedByDescentingRating = books.sort((firstBook,secondBook) => secondBook.rating - firstBook.rating);
-
+// Тесты
+// Объявлена переменная books.
+// Значение переменной books это исходный массив объектов книг.
+// Объявлена переменная sortedByAuthorName.
+// Значение переменной sortedByAuthorName это массив книг отсортированный по имени автора в алфавитном порядке.
+// Объявлена переменная sortedByReversedAuthorName.
+// Значение переменной sortedByReversedAuthorName это массив книг отсортированный по имени автора в обратном алфавитном порядке.
+// Объявлена переменная sortedByAscendingRating.
+// Значение переменной sortedByAscendingRating это массив книг отсортированный по возрастанию рейтинга.
+// Объявлена переменная sortedByDescentingRating.
+// Значение переменной sortedByDescentingRating это массив книг отсортированный по убыванию рейтинга.
+// Для перебора массива books используется метод sort().
 // ============== hw -06--38 ============
 
+// Задача. Сортировка по балансу
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала массив
+//  пользователей отсортированный по возрастанию их баланса (свойство balance)
+
+// const sortByAscendingBalance = users => {
+//     return [...users].sort((a,b) => a.balance - b.balance)
+//   };
+// Тесты
+// Объявлена переменная sortByAscendingBalance.
+// Переменной sortByAscendingBalance присвоена стрелочная функция с параметром (users).
+// Значение параметра users не изменяется.
+// Вызов функции с указанным массивом пользователей возвращает новый массив пользователей отсортированный по возрастанию их баланса.
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+// Для перебора параметра users использован метод sort().
 // ============== hw -06--39 ============
+// Задача. Сортировка по количеству друзей
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+const users =
+[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+]
+// Задание
+// Дополни функцию sortByDescendingFriendCount(users) так, чтобы она возвращала 
+// массив пользователей отсортированный по убыванию количества их друзей (свойство friends).
+
+// Пиши код ниже этой строки
+// const sortByDescendingFriendCount = users => {
+  
+//     return  [...users].sort((a,b) => b.friends.length  -  a.friends.length);
+//   };
+//   // Пиши код выше этой строки
+//   console.log(sortByDescendingFriendCount ( users)) ;
+  
+  // Пиши код выше этой строки
+
+// Тесты
+// Объявлена переменная sortByDescendingFriendCount.
+// Переменной sortByDescendingFriendCount присвоена стрелочная функция с параметром (users).
+// Значение параметра users не изменяется.
+// Для перебора параметра users использован метод sort().
+// Вызов функции с указанным массивом пользователей возвращает новый массив пользователей отсортированный по убыванию количества их друзей.
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+
 
 // ============== hw -06--40 ============
